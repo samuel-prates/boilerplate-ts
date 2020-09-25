@@ -1,10 +1,8 @@
 import "reflect-metadata";
-import { StatusCodes } from "http-status-codes";
 import { expect, spy } from 'chai';
 import { stub } from 'sinon';
-import { Command, CommandHandler, CommandResponse } from "../../src/app/model";
+import { Command, CommandHandler } from "../../src/app/model";
 import { CommandBus } from "../../src/app";
-import { exec } from "child_process";
 
 describe('CommandBus tests', () => {
     const command: Command = new Command(); 
