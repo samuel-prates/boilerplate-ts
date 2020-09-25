@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { HealthCheck } from '../../src/entrypoint';
+import { HealthCheck } from '../../src/user-interface';
 import { StatusCodes } from "http-status-codes";
 import { expect } from 'chai';
 import { stub } from 'sinon';

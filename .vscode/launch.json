@@ -9,12 +9,22 @@
       "name": "Run npm start",
       "request": "launch",
       "type": "node-terminal"
-    }
+    },
     {
       "command": "npm run test",
       "name": "Run test",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "name": "Docker: Attach to Node",
+      "type": "node",
+      "request": "attach",
+      "port": 7001,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src-app",
+      "protocol": "inspector"
     }
   ]
 }

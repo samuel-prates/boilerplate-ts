@@ -3,12 +3,12 @@ import express from 'express';
 import { InversifyExpressServer } from "inversify-express-utils";
 import createIocConfig from '../config/ioc-config';
 import { Container } from 'inversify';
-import '../entrypoint';
+import '../user-interface';
 
 export async function startHttp() {
   try {
     const app = express();
-    const port = 80 || process.env.PORT;
+    const port = 3000 || process.env.PORT;
     const container = new Container();
     const server =  new InversifyExpressServer(createIocConfig(container), null, { rootPath: "/" }, app);
     const appConfigured = server.build();

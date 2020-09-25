@@ -1,6 +1,6 @@
 {
   "cache": false,
-  "check-coverage": false,
+  "check-coverage": true,
   "extension": [
     ".ts"
   ],
@@ -9,7 +9,7 @@
   ],
   "exclude": [
     "src/infra/server.ts",
-    "**/index.ts"
+    "src/index.ts"
   ],
   "sourceMap": true,
   "reporter": [
