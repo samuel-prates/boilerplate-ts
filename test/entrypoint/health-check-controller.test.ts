@@ -19,7 +19,7 @@ describe('HealthCheckController tests', () => {
             send,
         } as any;
         commandBus = {
-            execute: stub().callsFake(()=>{ return [commandResponse] })
+            execute: stub().callsFake(() => { return [commandResponse] })
         } as any;
     });
 

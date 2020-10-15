@@ -1,4 +1,4 @@
 export enum COMMON_TYPES {
-    CommandHandler= "CommandHandler",
+    CommandHandler = "CommandHandler",
     CommandBus = "CommandBus",
 }

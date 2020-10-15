@@ -5,7 +5,7 @@ import { Command, CommandHandler } from "../../src/app/model";
 import { CommandBus } from "../../src/app";
 
 describe('CommandBus tests', () => {
-    const command: Command = new Command(); 
+    const command: Command = new Command();
     let execute = stub();
     let firstCommandHandler: CommandHandler;
     let secondCommandHandler: CommandHandler;

@@ -6,19 +6,19 @@ import { Container } from 'inversify';
 import '../user-interface';
 
 export async function startHttp() {
-  try {
-    const app = express();
-    const port = 3000 || process.env.PORT;
-    const container = new Container();
-    const server =  new InversifyExpressServer(createIocConfig(container), null, { rootPath: "/" }, app);
-    const appConfigured = server.build();
+    try {
+        const app = express();
+        const port = 3000 || process.env.PORT;
+        const container = new Container();
+        const server = new InversifyExpressServer(createIocConfig(container), null, { rootPath: "/" }, app);
+        const appConfigured = server.build();
 
-    appConfigured.listen(port, () => {
-      // tslint:disable-next-line:no-console
-      console.log(`server started at http://localhost:${port}`);
-    });
-  } catch (err) {
-    // tslint:disable-next-line:no-console
-    console.error(`Impossible to load configuration (${err})`);
-  }
+        appConfigured.listen(port, () => {
+            // tslint:disable-next-line:no-console
+            console.log(`server started at http://localhost:${port}`);
+        });
+    } catch (err) {
+        // tslint:disable-next-line:no-console
+        console.error(`Impossible to load configuration (${err})`);
+    }
 }

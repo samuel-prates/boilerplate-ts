@@ -8,25 +8,25 @@ import { HealthCheckCommand } from '../app/command';
 
 @controller('/health-check')
 export class HealthCheck {
-  constructor(@inject(COMMON_TYPES.CommandBus) private _bus: CommandBus){}
+    constructor(@inject(COMMON_TYPES.CommandBus) private _bus: CommandBus) { }
 
-  @httpGet('/')
-  public async check(req: Request, res: Response) {
-    const command: HealthCheckCommand = new HealthCheckCommand();
-    const hCResponse = await this._bus.execute(command);
-    const sendList:any[] = [];
-    res.statusCode = StatusCodes.OK;
+    @httpGet('/')
+    public async check(req: Request, res: Response) {
+        const command: HealthCheckCommand = new HealthCheckCommand();
+        const hCResponse = await this._bus.execute(command);
+        const sendList: any[] = [];
+        res.statusCode = StatusCodes.OK;
 
-    hCResponse.forEach(response => {
-      sendList.push(response.body);
-      if(response.status !== StatusCodes.OK){
-        res.statusCode = response.status;
-        res.send(response.body);
-      }
-    });
+        hCResponse.forEach(response => {
+            sendList.push(response.body);
+            if (response.status !== StatusCodes.OK) {
+                res.statusCode = response.status;
+                res.send(response.body);
+            }
+        });
 
-    if(res.statusCode === StatusCodes.OK){
-      res.send(sendList);
+        if (res.statusCode === StatusCodes.OK) {
+            res.send(sendList);
+        }
     }
-  }
 }

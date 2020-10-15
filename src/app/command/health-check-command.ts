@@ -1,3 +1,3 @@
 import { Command } from "../model";
 
-export class HealthCheckCommand extends Command {}
+export class HealthCheckCommand extends Command { }
